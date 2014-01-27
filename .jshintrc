@@ -1,0 +1,33 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "quotmark": "single",
+  "sub": true,
+  "undef": true,
+  //"unused": true,
+  "trailing": true,
+  "boss": true,
+  "eqnull": true,
+  "strict": true,
+  "smarttabs": true,
+
+  //"esnext": true,
+  //"globalstrict": true,
+  "iterator": true,
+  "proto": true,
+  //"onevar": true,
+
+  "devel": true,
+  "node": true,
+  "globals": {
+    "global": true,
+    "_": true
+  }
+}
