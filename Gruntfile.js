@@ -2,7 +2,7 @@
 
 var readfile = require('fs').readFileSync;
 
-var distWrap = readfile(__dirname + '/dist/_wrapper.js', 'utf8').split('[content]');
+var distWrap = readfile(__dirname + '/_dist_wrapper.js', 'utf8').split('[content]');
 
 module.exports = function(grunt) {
 

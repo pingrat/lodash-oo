@@ -1,21 +1,21 @@
 lodash-oo
 =========
 
-A small addon to [lo-dash](http://lodash.com/) attempting to provide modular, idiomatic implementations of popular concepts within object oriented JavaScript programming.
+A small addon to [lo-dash](http://lodash.com/) providing idio<strike>ma</strike>tic implementations of popular concepts within object oriented JavaScript programming.
 
 ## Installing
 
 Simple, just `wget` the latest version like a boss:
 
 ```bash
-$ wget ok
+$ wget http://raw.github.com/pingrat/lodash-oo/master/dist/lodash-oo.js
 ```
 
 ## Usage
 
 1. Load `lodash.js` (or `lodash.min.js`, whatever)
-2. Load `lodash-oo.js`
-3. Aaand you're done
+1. Load `lodash-oo.js`
+1. Aaand you're done
 
 ## Documentation
 

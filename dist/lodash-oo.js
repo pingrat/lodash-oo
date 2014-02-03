@@ -1,8 +1,6 @@
 // lodash-oo v0.0.2  2014-02-04
-! function() {
+(function() {
 	'use strict';
-
-	if (_ === void 0) return;
 
 	// source: src/inherits.js
 	// make [child] inherit the prototype of [parent]
@@ -48,4 +46,4 @@
 
 	_.overload = overload;
 
-}();
+}());
