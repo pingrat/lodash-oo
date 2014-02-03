@@ -5,7 +5,11 @@ A small addon to [lo-dash](http://lodash.com/) attempting to provide modular, id
 
 ## Installing
 
-You have [lodash-oo on GitHub](http://github.com/pingrat/lodash-oo) and if you're terrified of git or can't have your browsing history associated with me for judicial reasons the latest stable release
+Simple, just `wget` the latest version like a boss:
+
+```bash
+$ wget ok
+```
 
 ## Usage
 
@@ -15,7 +19,7 @@ You have [lodash-oo on GitHub](http://github.com/pingrat/lodash-oo) and if you'r
 
 ## Documentation
 
-This module adds a number of methods to lo-dash.
+This module adds a number of methods to lo-dash. They have not yet been documented. :-)
 
 ## License
 

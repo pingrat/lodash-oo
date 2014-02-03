@@ -34,27 +34,35 @@ module.exports = function(grunt) {
 			},
 		},
 
-grunt.initConfig({
-  concat: {
-    dist: {
-      options: {
-        // Replace all 'use strict' statements in the code with a single one at the top
-        banner: "'use strict';\n",
-        process: function(src, filepath) {
-          return '// Source: ' + filepath + '\n' +
-            src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
-        },
-      },
-      files: {
-        'dist/built.js': ['src/project.js'],
-      },
-    },
-  },
-});
 		concat: {
+			options: {
+
+			},
 			dist: {
-				options: {
-					banner: '// lodash-oo'
+				src: ['src/**/*.js'],
+				dest: 'dist/lodash-oo.js'
+			}
+		},
+
+		jsbeautifier: {
+			files: ['dist/**/*.js'],
+			options: {
+				//banner: '/*! <%= pkg.name %> v<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				js: {
+					braceStyle: 'collapse',
+					breakChainedMethods: false,
+					e4x: false,
+					evalCode: false,
+					indentWithTabs: true,
+					jslintHappy: false,
+					keepArrayIndentation: false,
+					keepFunctionIndentation: false,
+					maxPreserveNewlines: 2,
+					preserveNewlines: true,
+					spaceBeforeConditional: true,
+					spaceInParen: false,
+					unescapeStrings: false,
+					wrapLineLength: 0
 				}
 			}
 		},
@@ -67,16 +75,12 @@ grunt.initConfig({
 			},
 			sources: {
 				files: '<%= jshint.sources.src %>',
-				tasks: ['jshint:sources']
-			},
-			dist: {
-				files: '<%= jshint.dist.src %>',
-				tasks: ['jshint:dist']
+				tasks: ['jshint:sources','concat:dist' ,'jsbeautifier' , 'jshint:dist']
 			},
 			test: {
 				files: '<%= jshint.test.src %>',
 				tasks: ['jshint:test', 'qunit']
-			},
+			}
 		}
 
 	});
@@ -84,8 +88,10 @@ grunt.initConfig({
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-jsbeautifier');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'qunit']);
+	grunt.registerTask('default', ['jshint', 'concat', 'jsbeautifier']);
 
 };
