@@ -1,6 +1,6 @@
 {
   "name": "lodash-oo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A small addon for lodash with oop-related functionality",
   "main": "index.js",
   "scripts": {

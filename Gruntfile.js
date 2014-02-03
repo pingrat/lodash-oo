@@ -1,5 +1,9 @@
 'use strict';
 
+var readfile = require('fs').readFileSync;
+
+var distWrap = readfile(__dirname + '/dist/_wrapper.js', 'utf8').split('[content]');
+
 module.exports = function(grunt) {
 
 	// Project configuration.
@@ -36,7 +40,12 @@ module.exports = function(grunt) {
 
 		concat: {
 			options: {
-
+				banner: distWrap[0],
+				footer: distWrap[1],
+				process: function(src, filepath) {
+					return '// source: ' + filepath + '\n' +
+						src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
+				},
 			},
 			dist: {
 				src: ['src/**/*.js'],
@@ -49,20 +58,12 @@ module.exports = function(grunt) {
 			options: {
 				//banner: '/*! <%= pkg.name %> v<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 				js: {
-					braceStyle: 'collapse',
-					breakChainedMethods: false,
-					e4x: false,
-					evalCode: false,
 					indentWithTabs: true,
 					jslintHappy: false,
 					keepArrayIndentation: false,
 					keepFunctionIndentation: false,
 					maxPreserveNewlines: 2,
-					preserveNewlines: true,
 					spaceBeforeConditional: true,
-					spaceInParen: false,
-					unescapeStrings: false,
-					wrapLineLength: 0
 				}
 			}
 		},
