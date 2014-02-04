@@ -1,7 +1,7 @@
 lodash-oo
 =========
 
-A small addon to [lo-dash](http://lodash.com/) providing idio<strike>ma</strike>tic implementations of popular concepts within object oriented JavaScript programming.
+A small addon to [lo-dash](http://lodash.com/) providing idio(ma/tas)tic implementations of popular concepts within object oriented JavaScript programming.
 
 ## Installing
 
@@ -75,9 +75,3 @@ assert(rect.getPos() === '[1x9]');
 ## License
 
 [The MIT License (MIT)](http://no.mit-license.org/)
-
-## Bonus: Multi-purpose source
-
-1. The source code of this application can also be printed and, when correctly placed on a flat surface with the printout facing down, used just like a regular sheet of paper.
-2. By creating several complicated and exact diagonal folds in the printout, a variety of objects vaugly representing some type of flying machine can be constructed.
-3. By reorganising the individual characters of the source code, excerpts from over 50,000 works of litterature can be created.
