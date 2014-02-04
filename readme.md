@@ -13,17 +13,62 @@ $ wget http://raw.github.com/pingrat/lodash-oo/master/dist/lodash-oo.js
 
 ## Usage
 
-1. Load `lodash.js` (or `lodash.min.js`, whatever)
-1. Load `lodash-oo.js`
-1. Aaand you're done
+Browser:
 
-Note that there is no testing for lodash in `lodash-oo.js` at the moment, it expects the variable `_` and it expects it to be global. This will possibly be addressed in a later version.
+```html
+<script src="path/to/lodash.js/"></script>
+<script src="path/to/lodash-oo.js/"></script>
+```
+
+In node, just put `lodash-oo.js` in your sources for now, npm package is coming, bla bla.
+
+```javascript
+require('./path/to/lodash-oo.js');
+// or, if you're one of those who think global variables give you herpes:
+var _ = require('lodash');
+_.mixin(require('path/to/lodash-oo.js'));
+```
 
 ## Documentation
 
 This module adds a number of methods to lo-dash.
 
 They have not yet been documented. :-)
+
+Here's an example from the test suit:
+
+```javascript
+var Shape = function Shape () {
+	this.x = 0;
+	this.y = 0;
+};
+Shape.prototype.getPos = function getPos () {
+	return this.x + 'x' + this.y;
+};
+
+var Square = function Square () {
+	this.super_();
+	this.x = 1;
+	this.y = 9;
+};
+_.inherits(Square, Shape);
+
+var Rectangle = function Rectangle () {
+	this.super_();
+};
+Rectangle.prototype.getPos = function getPos () {
+	return '[' + this.super_() + ']';
+};
+_.inherits(Rectangle, Square);
+
+var square = new Square();
+var rect = new Rectangle();
+
+assert(square instanceof Square);
+assert(square instanceof Shape);
+assert(square.getPos() === '1x9');
+assert(rect.getPos() === '[1x9]');
+```
 
 ## License
 

@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 		// QUnit
 		qunit: {
 			all: {
-				files: ['test/**/test_*.js']
+				src: ['test/**/*.html']
 			}
 		},
 
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
 			},
 			sources: {
 				files: '<%= jshint.sources.src %>',
-				tasks: ['jshint:sources','concat:dist' ,'jsbeautifier' , 'jshint:dist']
+				tasks: ['jshint:sources', 'concat:dist' ,'jsbeautifier', 'jshint:dist', 'qunit:all']
 			},
 			test: {
 				files: '<%= jshint.test.src %>',
@@ -93,6 +93,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'concat', 'jsbeautifier']);
+	grunt.registerTask('default', ['jshint:sources', 'concat:dist', 'jsbeautifier', 'jshint:dist', 'qunit:all']);
 
 };

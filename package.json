@@ -1,10 +1,10 @@
 {
   "name": "lodash-oo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A small addon for lodash with oop-related functionality",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,6 @@
   ],
   "author": "pingrat",
   "license": "http://no.mit-license.org/",
-  "bugs": "no",
   "homepage": "http://pingrat.github.io/lodash-oo",
   "devDependencies": {
     "grunt": "~0.4.2",
