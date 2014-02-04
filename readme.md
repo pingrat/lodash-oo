@@ -20,6 +20,8 @@ Browser:
 <script src="path/to/lodash-oo.js/"></script>
 ```
 
+Note that the browser support is untested and probably laughable at best.
+
 In node, just put `lodash-oo.js` in your sources for now, npm package is coming, bla bla.
 
 ```javascript
@@ -72,7 +74,7 @@ assert(rect.getPos() === '[1x9]');
 
 ## License
 
-[![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-2.png)](http://www.wtfpl.net/)
+[The MIT License (MIT)](http://no.mit-license.org/)
 
 ## Bonus: Multi-purpose source
 
