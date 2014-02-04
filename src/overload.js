@@ -1,5 +1,5 @@
 // copies all methods in [source] to [target], if the method
-// already exists in [target] it is updated to suppert accessing
+// already exists in [target] it is updated to support accessing
 // the original method (in [source]) through this.super_
 function overload(target, source) {
 	'use strict';

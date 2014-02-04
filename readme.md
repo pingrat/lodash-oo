@@ -17,9 +17,13 @@ $ wget http://raw.github.com/pingrat/lodash-oo/master/dist/lodash-oo.js
 1. Load `lodash-oo.js`
 1. Aaand you're done
 
+Note that there is no testing for lodash in `lodash-oo.js` at the moment, it expects the variable `_` and it expects it to be global. This will possibly be addressed in a later version.
+
 ## Documentation
 
-This module adds a number of methods to lo-dash. They have not yet been documented. :-)
+This module adds a number of methods to lo-dash.
+
+They have not yet been documented. :-)
 
 ## License
 
